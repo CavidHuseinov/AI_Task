@@ -1,0 +1,263 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Sprint_3a_task\n",
+        "\n",
+        "Bu notebook, verilən 12 tapşırığı həll edir. Hər tapşırıq ayrı bir funksiya kimi təşkil olunub və nəticələri test etmək üçün çağırışlar əlavə edilib."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 1: x > 0 olarsa \"müsbət\", x < 0 olarsa \"mənfi\", bərabərdirsə \"sıfır\" çap etsin.\n",
+        "def task_1(x):\n",
+        "    if x > 0:\n",
+        "        print(\"müsbət\")\n",
+        "    elif x < 0:\n",
+        "        print(\"mənfi\")\n",
+        "    else:\n",
+        "        print(\"sıfır\")\n",
+        "\n",
+        "# Test\n",
+        "task_1(5)  # müsbət\n",
+        "task_1(-3)  # mənfi\n",
+        "task_1(0)  # sıfır"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 2: n rəqəmi cütdürsə \"cüt\", təkdirsə \"tək\" çap etsin.\n",
+        "def task_2(n):\n",
+        "    if n % 2 == 0:\n",
+        "        print(\"cüt\")\n",
+        "    else:\n",
+        "        print(\"tək\")\n",
+        "\n",
+        "# Test\n",
+        "task_2(4)  # cüt\n",
+        "task_2(7)  # tək"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 3: a, b, c rəqəmləri verilmişdir. Ən böyük rəqəmi çap etsin.\n",
+        "def task_3(a, b, c):\n",
+        "    max_num = max(a, b, c)\n",
+        "    print(max_num)\n",
+        "\n",
+        "# Test\n",
+        "task_3(10, 5, 8)  # 10"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 4: day dəyişəni 1-7 arası rəqəmdir. Müvafiq həftə gününü çap etsin, əks halda \"Yanlış gün\" yazsın.\n",
+        "def task_4(day):\n",
+        "    days = {\n",
+        "        1: \"Bazar ertəsi\",\n",
+        "        2: \"Çərşənbə axşamı\",\n",
+        "        3: \"Çərşənbə\",\n",
+        "        4: \"Cümə axşamı\",\n",
+        "        5: \"Cümə\",\n",
+        "        6: \"Şənbə\",\n",
+        "        7: \"Bazar\"\n",
+        "    }\n",
+        "    print(days.get(day, \"Yanlış gün\"))\n",
+        "\n",
+        "# Test\n",
+        "task_4(1)  # Bazar ertəsi\n",
+        "task_4(8)  # Yanlış gün"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 5: temp < 0 olarsa \"soyuq\", 0-20 arası olarsa \"normal\", 20-dən böyükdürsə \"isti\" çap etsin.\n",
+        "def task_5(temp):\n",
+        "    if temp < 0:\n",
+        "        print(\"soyuq\")\n",
+        "    elif 0 <= temp <= 20:\n",
+        "        print(\"normal\")\n",
+        "    else:\n",
+        "        print(\"isti\")\n",
+        "\n",
+        "# Test\n",
+        "task_5(-5)  # soyuq\n",
+        "task_5(15)  # normal\n",
+        "task_5(25)  # isti"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 6: password uzunluğu 8-dən kiçikdirsə \"qısa\", 8-12 arasıdırsa \"orta\", 12-dən böyükdürsə \"uzun\" çap etsin.\n",
+        "def task_6(password):\n",
+        "    length = len(password)\n",
+        "    if length < 8:\n",
+        "t        print(\"qısa\")\n",
+        "    elif 8 <= length <= 12:\n",
+        "        print(\"orta\")\n",
+        "    else:\n",
+        "        print(\"uzun\")\n",
+        "\n",
+        "# Test\n",
+        "task_6(\"1234567\")  # qısa\n",
+        "task_6(\"12345678\")  # orta\n",
+        "task_6(\"1234567890123\")  # uzun"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 7: x həm 3-ə, həm də 5-ə bölünürsə \"3 və 5\", yalnız 3-ə bölünürsə \"3\", yalnız 5-ə bölünürsə \"5\", heç birinə bölünmürsə \"heç biri\" çap etsin.\n",
+        "def task_7(x):\n",
+        "    if x % 3 == 0 and x % 5 == 0:\n",
+        "        print(\"3 və 5\")\n",
+        "    elif x % 3 == 0:\n",
+        "        print(\"3\")\n",
+        "    elif x % 5 == 0:\n",
+        "        print(\"5\")\n",
+        "    else:\n",
+        "        print(\"heç biri\")\n",
+        "\n",
+        "# Test\n",
+        "task_7(15)  # 3 və 5\n",
+        "task_7(9)  # 3\n",
+        "task_7(10)  # 5\n",
+        "task_7(7)  # heç biri"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 8: 0-dan 20-yə qədər cüt rəqəmləri çap etsin.\n",
+        "def task_8():\n",
+        "    for i in range(0, 21, 2):\n",
+        "        print(i)\n",
+        "\n",
+        "# Test\n",
+        "task_8()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 9: \"Bağda ərik var idi …\" stringinin hər elementini for ilə ayrı-ayrılıqda çap edin.\n",
+        "def task_9():\n",
+        "    text = \"Bağda ərik var idi …\"\n",
+        "    for char in text:\n",
+        "        print(char)\n",
+        "\n",
+        "# Test\n",
+        "task_9()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 10: 1-dən 10-a qədər rəqəmləri çap edin, amma 3 xaric.\n",
+        "def task_10():\n",
+        "    for i in range(1, 11):\n",
+        "        if i != 3:\n",
+        "            print(i)\n",
+        "\n",
+        "# Test\n",
+        "task_10()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 11: 1-dən başlayaraq ilk 5-ə bölünən rəqəmi tapın və while ilə çap edin (break istifadə edin).\n",
+        "def task_11():\n",
+        "    num = 1\n",
+        "    while True:\n",
+        "        if num % 5 == 0:\n",
+        "            print(num)\n",
+        "            break\n",
+        "        num += 1\n",
+        "\n",
+        "# Test\n",
+        "task_11()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Tapşırıq 12: (1, 3, 5, 7, 9) listində 5-i tapın və indeksini çap edin (break istifadə edin).\n",
+        "def task_12():\n",
+        "    numbers = (1, 3, 5, 7, 9)\n",
+        "    for i in range(len(numbers)):\n",
+        "        if numbers[i] == 5:\n",
+        "            print(i)\n",
+        "            break\n",
+        "\n",
+        "# Test\n",
+        "task_12()"
+      ]
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.8.10"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 4
+}
